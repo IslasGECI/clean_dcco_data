@@ -16,6 +16,8 @@ describe("Eliminar registros de islas en el golfo", {
     obtained_columns <- names(obtained)
     expected_column <- "Isla"
     expect_true(expected_column %in% obtained_columns)
+    islet <- "Alcatraz"
+    expect_false(islet %in% obtained$Isla)
   })
 })
 describe("Agregar registros altos", {
