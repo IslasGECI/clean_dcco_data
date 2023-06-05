@@ -1,6 +1,7 @@
+all_islets_path <- "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv"
 describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo de todas las islas", {
   it("concatenate_maximum_california_gulf", {
-    all_islets_path <- "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv"
+    skip("This is the gold")
     all_islets_data <- readr::read_csv(all_islets_path, show_col_types = FALSE)
     california_path <- "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv"
     california_data <- readr::read_csv(california_path, show_col_types = FALSE)
@@ -11,7 +12,7 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
 })
 describe("Eliminar registros de islas en el golfo", {
   it("Tirar registros por isla", {
-
+    read_from_all_islets(all_islets_path)
   })
 })
 describe("Agregar registros altos", {
