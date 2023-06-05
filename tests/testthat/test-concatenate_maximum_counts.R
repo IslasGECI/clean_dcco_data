@@ -17,7 +17,7 @@ describe("Eliminar registros de islas en el golfo", {
     obtained_columns <- names(obtained)
     expected_column <- "Isla"
     expect_true(expected_column %in% obtained_columns)
-    islet <- c("Alcatraz", "Bledos")
+    islet <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
     are_any_there <- any(islet %in% obtained$Isla)
     expect_false(are_any_there)
   })
