@@ -12,7 +12,10 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
 })
 describe("Eliminar registros de islas en el golfo", {
   it("Tirar registros por isla", {
-    read_from_all_islets(all_islets_path)
+    obtained <- read_from_all_islets(all_islets_path)
+    obtained_columns <- names(obtained)
+    expected_column <- "Isla"
+    expect_true(expected_column %in% obtained_columns)
   })
 })
 describe("Agregar registros altos", {
