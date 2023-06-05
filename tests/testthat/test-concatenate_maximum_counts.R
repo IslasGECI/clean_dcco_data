@@ -6,7 +6,7 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
     california_path <- "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv"
     california_data <- readr::read_csv(california_path, show_col_types = FALSE)
     obtained <- concatenate_maximum_california_gulf(all_islets_data, california_data)
-    expected <- readr::read_csv("/workdir/tests/data/concatenated_california_data.csv", show_col_types = FALSE)
+    expected <- readr::read_csv("/workdir/tests/data/concatenated_califoria_data.csv", show_col_types = FALSE)
     expect_equal(obtained, expected)
   })
 })
@@ -16,7 +16,7 @@ describe("Eliminar registros de islas en el golfo", {
     obtained_columns <- names(obtained)
     expected_column <- "Isla"
     expect_true(expected_column %in% obtained_columns)
-    islet <- "Alcatraz"
+    islet <- c("Alcatraz", "Bledos")
     expect_false(islet %in% obtained$Isla)
   })
 })
