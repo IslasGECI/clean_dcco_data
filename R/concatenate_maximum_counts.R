@@ -6,5 +6,5 @@ read_from_all_islets <- function(all_islets_path, not_wanted_islets = c("Alcatra
 }
 
 select_initial_year <- function(california_data) {
-  tibble::tibble("Temporada" = c("2018"))
+  california_data %>% tidyr::separate(Temporada, c("Temporada", NA), "/")
 }
