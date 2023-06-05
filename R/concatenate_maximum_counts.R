@@ -8,3 +8,5 @@ read_from_all_islets <- function(all_islets_path, not_wanted_islets = c("Alcatra
 select_initial_year <- function(california_data) {
   california_data %>% tidyr::separate(Temporada, c("Temporada", NA), "/")
 }
+
+concatenate_california_and_all_islets <- function(california_data, all_islets_data) {}
