@@ -29,6 +29,10 @@ describe("Agregar registros altos", {
     expect_equal(obtained$Temporada[2], "2019")
   })
   it("Concatenar registros altos", {
-    concatenate_california_and_all_islets(california_data, all_islets_data)
+    california_data <- tibble::tibble(Nidos_altos_por_temporada = c(1, 2), Temporada = c("a", "b"))
+    all_islets_data <- tibble::tibble(Nidos_activos_por_visita = c(3, 4), Temporada = c("c", "d"))
+    expected <- tibble::tibble(Nidos_activos_por_visita = c(1, 2, 3, 4), Temporada = c("a", "b", "c", "d"))
+    obtained <- concatenate_california_and_all_islets(california_data, all_islets_data)
+    expect_equal(obtained, expected)
   })
 })
