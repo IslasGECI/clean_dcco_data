@@ -5,7 +5,7 @@ all_islets_data <- readr::read_csv(all_islets_path, show_col_types = FALSE)
 describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo de todas las islas", {
   it("concatenate_maximum_california_gulf", {
     obtained <- concatenate_maximum_california_gulf(all_islets_data, california_data)
-    expected <- readr::read_csv("/workdir/tests/data/concatenated_california_data.csv", show_col_types = FALSE)
+    expected <- readr::read_csv("/workdir/tests/data/concatenated_california_data.csv", col_types = "cccic", show_col_types = FALSE)
     expect_equal(obtained, expected)
   })
 })
