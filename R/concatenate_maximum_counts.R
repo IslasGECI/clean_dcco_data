@@ -11,5 +11,6 @@ select_initial_year <- function(california_data) {
 concatenate_california_and_all_islets <- function(california_data, all_islets_data) {
   california_data %>%
     dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada") %>%
+    dplyr::select(-c("mas notas")) %>%
     rbind(all_islets_data)
 }
