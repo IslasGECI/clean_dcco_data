@@ -1,4 +1,4 @@
-read_from_all_islets <- function(data, not_wanted_islets = c("Alcatraz", "Bledos", "Pajaros", "Patos")) {
+drop_california_islands <- function(data, not_wanted_islets = c("Alcatraz", "Bledos", "Pajaros", "Patos")) {
   wanted_islet <- !data$Isla %in% not_wanted_islets
   data %>%
     dplyr::filter(wanted_islet)
