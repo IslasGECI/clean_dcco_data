@@ -1,6 +1,6 @@
 options <- list(
-  left_data = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
-  right_data = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
+  right_data = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
+  left_data = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
   output_path = "/workdir/tests/data/concatenated_output.csv"
 )
 
