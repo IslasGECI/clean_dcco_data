@@ -1,4 +1,23 @@
 Fecha,Isla,Temporada,Nidos_activos_por_visita,Notas
+13/Dic/2018,Alcatraz,2018,842,
+13/Dic/2019,Alcatraz,2019,778,
+20/Nov/2020,Alcatraz,2020,767,
+19/Nov/2021,Alcatraz,2021,663,
+09/Nov/2022,Alcatraz,2022,676,
+25/Mar/2021,Bledos,2020,530,
+13/Dic/2021,Bledos,2021,640,
+13/Dic/2022,Bledos,2022,586,
+NA,Patos,2016,NA,Datos insuficientes
+17/Dic/2020,Patos,2020,660,sólo conteo para esta temporada
+20/Ene/2022,Patos,2021,842,
+13/Dic/2022,Patos,2022,892,
+NA,Pajaros,2011,NA,Datos insuficientes
+29/Nov/2012,Pajaros,2012,2480,
+28/Nov/2013,Pajaros,2013,1390,Se perdió la posible temporada alta en diciembre de 2013 (pero conteos en Oct y Feb)
+24/Ene/2020,Pajaros,2019,769,
+26/Feb/2021,Pajaros,2020,579,
+14/Dic/2021,Pajaros,2021,613,
+14/Dic/2022,Pajaros,2022,541,
 NA,Coronado,2016,168,NA
 NA,Coronado,2017,93,NA
 NA,Coronado,2018,175,NA
@@ -21,22 +40,3 @@ NA,San Jeronimo,2022,158,NA
 NA,Natividad,2017,434,NA
 NA,Natividad,2018,721,NA
 NA,Natividad,2019,625,NA
-13/Dic/2018,Alcatraz,2018,842,
-13/Dic/2019,Alcatraz,2019,778,
-20/Nov/2020,Alcatraz,2020,767,
-19/Nov/2021,Alcatraz,2021,663,
-09/Nov/2022,Alcatraz,2022,676,
-25/Mar/2021,Bledos,2020,530,
-13/Dic/2021,Bledos,2021,640,
-13/Dic/2022,Bledos,2022,586,
-NA,Patos,2016,NA,
-17/Dic/2020,Patos,2020,660,
-20/Ene/2022,Patos,2021,842,
-13/Dic/2022,Patos,2022,892,
-NA,Pajaros,2011,NA,
-29/Nov/2012,Pajaros,2012,2480,
-28/Nov/2013,Pajaros,2013,1390,
-24/Ene/2020,Pajaros,2019,769,
-26/Feb/2021,Pajaros,2020,579,
-14/Dic/2021,Pajaros,2021,613,
-14/Dic/2022,Pajaros,2022,541,
