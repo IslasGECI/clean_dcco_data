@@ -20,6 +20,14 @@ describe("Eliminar registros de islas en el golfo", {
     expect_false(are_any_there)
   })
 })
+describe("Eliminar registros de islas del pacífico", {
+  it("Tirar registros por isla", {
+    obtained <- drop_pacific_islands(all_islets_data)
+    islet <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
+    are_any_there <- any(islet %in% obtained$Isla)
+    expect_true(are_any_there)
+  })
+})
 describe("Agregar registros altos", {
   it("Seleccionar nombre temporada", {
     obtained <- select_initial_year(california_data)
