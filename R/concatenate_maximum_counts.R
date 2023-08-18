@@ -1,9 +1,9 @@
-drop_california_islands <- function(data) {
+select_pacific_islands <- function(data) {
   california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
   drop_islands(data, california_islands)
 }
 
-drop_pacific_islands <- function(data) {
+select_california_islands <- function(data) {
   california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
   select_islands(data, california_islands)
 }
@@ -32,7 +32,7 @@ concatenate_california_and_all_islets <- function(california_data, all_islets_da
 }
 concatenate_maximum_california_gulf <- function(all_islets_data, california_data) {
   no_california_islands <- all_islets_data |>
-    drop_california_islands()
+    select_pacific_islands()
   california_single_year_season <- california_data |>
     select_initial_year()
   concatenate_california_and_all_islets(california_single_year_season, no_california_islands)

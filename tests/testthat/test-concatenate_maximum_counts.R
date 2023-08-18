@@ -11,7 +11,7 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
 })
 describe("Eliminar registros de islas en el golfo", {
   it("Tirar registros por isla", {
-    obtained <- drop_california_islands(all_islets_data)
+    obtained <- select_pacific_islands(all_islets_data)
     obtained_columns <- names(obtained)
     expected_column <- "Isla"
     expect_true(expected_column %in% obtained_columns)
@@ -22,7 +22,7 @@ describe("Eliminar registros de islas en el golfo", {
 })
 describe("Eliminar registros de islas del pacífico", {
   it("Tirar registros por isla", {
-    obtained <- drop_pacific_islands(all_islets_data)
+    obtained <- select_california_islands(all_islets_data)
     islet <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
     are_any_there <- any(islet %in% obtained$Isla)
     expect_true(are_any_there)
