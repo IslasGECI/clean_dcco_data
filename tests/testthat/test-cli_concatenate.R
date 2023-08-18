@@ -13,6 +13,21 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
   })
 })
 
+describe("Drop pacific islands from csv with all islets", {
+  data_without_pacific_islands <- "/workdir/tests/data/droped_pacific_islands.csv"
+  options <- list(
+    data_path = "/workdir/tests/data/concatenated_output.csv",
+    output_path = data_without_pacific_islands
+  )
+  it("select california gulf islands", {
+    select_california_islands_cli(options)
+    obtained <- readr::read_csv(data_without_pacific_islands, col_types = "cccic", show_col_types = FALSE)
+    original_data <- readr::read_csv("/workdir/tests/data/concatenated_output.csv", col_types = "cccic", show_col_types = FALSE)
+    obtained_length <- nrow(obtained)
+    original_length <- nrow(original_data)
+    expect_true(obtained_length < original_length)
+  })
+})
 
 describe("Drop gulf islands from csv with all islets", {
   data_without_gulf_islands <- "/workdir/tests/data/droped_gulf_islands.csv"
@@ -20,7 +35,7 @@ describe("Drop gulf islands from csv with all islets", {
     data_path = "/workdir/tests/data/concatenated_output.csv",
     output_path = data_without_gulf_islands
   )
-  it("concatenate_maximum_california_gulf", {
+  it("select pacific gulf islands", {
     select_pacific_islands_cli(options)
     obtained <- readr::read_csv(data_without_gulf_islands, col_types = "cccic", show_col_types = FALSE)
     original_data <- readr::read_csv("/workdir/tests/data/concatenated_output.csv", col_types = "cccic", show_col_types = FALSE)
