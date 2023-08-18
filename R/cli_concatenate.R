@@ -11,3 +11,9 @@ select_pacific_islands_cli <- function(options) {
   pacific_islands <- select_pacific_islands(all_islets_data)
   readr::write_csv(pacific_islands, options[["output_path"]])
 }
+
+select_california_islands_cli <- function(options) {
+  all_islets_data <- readr::read_csv(options[["data_path"]], show_col_types = FALSE)
+  california_islands <- select_california_islands(all_islets_data)
+  readr::write_csv(california_islands, options[["output_path"]])
+}
