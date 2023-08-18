@@ -12,3 +12,17 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
     expect_equal(obtained, expected)
   })
 })
+
+
+describe("Drop gulf islands from csv with all islets", {
+  data_without_gulf_islands <- "/workdir/tests/data/droped_gulf_islands.csv"
+  options <- list(
+    data_path = "/workdir/tests/data/concatenated_output.csv",
+    output_path = data_without_gulf_islands
+  )
+  it("concatenate_maximum_california_gulf", {
+    select_pacific_islands(options)
+    obtained <- readr::read_csv(data_without_gulf_islands, col_types = "cccic", show_col_types = FALSE)
+    original_data <- readr::read_csv("/workdir/tests/data/concatenated_output.csv", col_types = "cccic", show_col_types = FALSE)
+  })
+})
