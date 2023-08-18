@@ -1,13 +1,13 @@
 drop_california_islands <- function(data) {
-  not_wanted_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
-  wanted_islet <- !data$Isla %in% not_wanted_islands
-  drop_islands(data, wanted_islet)
+  wanted_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
+  not_wanted_islet <- !data$Isla %in% wanted_islands
+  drop_islands(data, not_wanted_islet)
 }
 
 drop_pacific_islands <- function(data) {
   not_wanted_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
-  wanted_islet <- data$Isla %in% not_wanted_islands
-  drop_islands(data, wanted_islet)
+  not_wanted_islet <- data$Isla %in% not_wanted_islands
+  drop_islands(data, not_wanted_islet)
 }
 
 drop_islands <- function(data, wanted_islet) {
