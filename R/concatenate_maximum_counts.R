@@ -2,7 +2,7 @@ drop_california_islands <- function(data, not_wanted_islands = c("Alcatraz", "Bl
   drop_islands(data, not_wanted_islands)
 }
 
-drop_islands <- function(data, not_wanted_islands = c("Alcatraz", "Bledos", "Pajaros", "Patos")) {
+drop_islands <- function(data, not_wanted_islands) {
   wanted_islet <- !data$Isla %in% not_wanted_islands
   data |>
     dplyr::filter(wanted_islet)
