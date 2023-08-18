@@ -1,20 +1,20 @@
 drop_california_islands <- function(data) {
   california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
-  select_islands(data, california_islands)
+  drop_islands(data, california_islands)
 }
 
 drop_pacific_islands <- function(data) {
   california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
-  drop_islands(data, california_islands)
+  select_islands(data, california_islands)
 }
 
-select_islands <- function(data, california_islands) {
+drop_islands <- function(data, california_islands) {
   wanted_islet <- !data$Isla %in% california_islands
   data |>
     dplyr::filter(wanted_islet)
 }
 
-drop_islands <- function(data, california_islands) {
+select_islands <- function(data, california_islands) {
   not_wanted_islet <- data$Isla %in% california_islands
   data |>
     dplyr::filter(not_wanted_islet)
