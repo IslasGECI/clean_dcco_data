@@ -24,5 +24,8 @@ describe("Drop gulf islands from csv with all islets", {
     select_pacific_islands(options)
     obtained <- readr::read_csv(data_without_gulf_islands, col_types = "cccic", show_col_types = FALSE)
     original_data <- readr::read_csv("/workdir/tests/data/concatenated_output.csv", col_types = "cccic", show_col_types = FALSE)
+    obtained_length <- length(obtained)
+    original_length <- length(original_data)
+    expect_true(obtained_length < original_length)
   })
 })
