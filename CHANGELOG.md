@@ -9,23 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add `select_pacific_islands()`
-
 ### Fixed
 
 ### Changed
 
 ### Removed
 
-## [0.1.0] - 2023-06-06
+## [0.2.0] - 2023-08-18
 
 ### Added
 
-### Fixed
+- Add `select_pacific_islands_cli()`
+- Add `select_california_islands_cli()`
 
-### Changed
+## [0.1.0] - 2023-06-06
 
-### Removed
 
-[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.0.0...v0.2.0
 [0.1.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.0.0...v0.1.0
