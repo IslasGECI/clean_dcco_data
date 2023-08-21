@@ -20,6 +20,7 @@ select_california_islands_cli <- function(options) {
   readr::write_csv(california_islands, options[["output_path"]])
 }
 
+#' @export
 write_summary_by_season <- function(options) {
   data_by_season_and_islets <- readr::read_csv(options[["data_path"]], show_col_types = FALSE)
   summary_by_season <- sum_by_season(data_by_season_and_islets)
