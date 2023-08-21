@@ -44,3 +44,19 @@ describe("Drop gulf islands from csv with all islets", {
     expect_true(obtained_length < original_length)
   })
 })
+describe("Summary counts by season", {
+  summary_output <- "/workdir/tests/data/summary_by_season.csv"
+  input_path <- "/workdir/tests/data/concatenated_california_data.csv"
+  options <- list(
+    data_path = input_path,
+    output_path = summary_output
+  )
+  it("count_by_season", {
+    write_summary_by_season(options)
+    obtained <- readr::read_csv(summary_output, show_col_types = FALSE)
+    original_data <- readr::read_csv(input_path, show_col_types = FALSE)
+    obtained_length <- nrow(obtained)
+    original_length <- nrow(original_data)
+    expect_true(obtained_length < original_length)
+  })
+}
