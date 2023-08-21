@@ -14,5 +14,8 @@ describe("Sum burrows quantity by season", {
     obtained_2011 <- obtained[obtained$Temporada == 2011, "Nidos_activos_por_visita"][[1]]
     expected_2011 <- 0
     expect_equal(obtained_2011, expected_2011)
+    obtained_2018 <- obtained[obtained$Temporada == 2018, "Nidos_activos_por_visita"][[1]]
+    expected_2018 <- 2499
+    expect_equal(obtained_2018, expected_2018)
   })
 })
