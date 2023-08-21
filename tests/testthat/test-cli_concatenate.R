@@ -59,4 +59,4 @@ describe("Summary counts by season", {
     original_length <- nrow(original_data)
     expect_true(obtained_length < original_length)
   })
-}
+})
