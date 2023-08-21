@@ -42,8 +42,8 @@ setup: clean install
 install:
 	R -e "devtools::document()" && \
     R CMD build . && \
-    R CMD check clean.dcco_0.3.0.tar.gz && \
-    R CMD INSTALL clean.dcco_0.3.0.tar.gz
+    R CMD check clean.dcco_0.3.1.tar.gz && \
+    R CMD INSTALL clean.dcco_0.3.1.tar.gz
 
 tests:
 	Rscript -e "devtools::test(stop_on_failure = TRUE)"
