@@ -1,5 +1,5 @@
 select_pacific_islands <- function(data) {
-  california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos")
+  california_islands <- c("Alcatraz", "Bledos", "Pajaros", "Patos", "Coronado Norte", "Coronado Sur")
   drop_islands(data, california_islands)
 }
 
