@@ -10,11 +10,11 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
   })
 })
 describe("Delete historical data", {
-  historical_data_path <- "/workdir/tests/data/conteo_nidos_cormoran_todas_islas_with_historical_data.cs"
+  historical_data_path <- "/workdir/tests/data/conteo_nidos_cormoran_todas_islas_with_historical_data.csv"
   historical_data <- readr::read_csv(historical_data_path, show_col_types = FALSE)
   it("Remove registers for Coronado Sur and Norte", {
-    obtained <- select_pacific_islands_without_histoical_data(historical_data)
-    islet <- c("Coronado Norte", "Coronado Sur")
+    obtained <- select_pacific_islands_without_historical_data(historical_data)
+    islet <- c("Alcatraz", "Bledos", "Pajaros", "Patos", "Coronado Norte", "Coronado Sur")
     are_any_there <- any(islet %in% obtained$Isla)
     expect_false(are_any_there)
   })
