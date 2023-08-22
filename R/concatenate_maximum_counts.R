@@ -10,7 +10,8 @@ select_california_islands <- function(data) {
 
 select_pacific_islands_without_historical_data <- function(data) {
   islands_with_historical_data <- c("Coronado Norte", "Coronado Sur")
-  drop_islands(data, islands_with_historical_data)
+  no_historical_data <- drop_islands(data, islands_with_historical_data)
+  select_pacific_islands(no_historical_data)
 }
 
 drop_islands <- function(data, california_islands) {
