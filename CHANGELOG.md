@@ -15,10 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-## [0.3.1] - 2023-08-21
+## [0.3.1] - 2023-08-22
 
 ### Fixed
-- Exclude Coronado Sur and Norte from pacific islands.
+- Exclude Coronado Sur and Norte from Pacific islands.
 
 ## [0.3.0] - 2023-08-21
 
