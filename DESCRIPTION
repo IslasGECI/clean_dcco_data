@@ -11,6 +11,7 @@ Description: Módulo para limpiar datos de cormorant orejón
 Encoding: UTF-8
 Imports:
     dplyr,
+    geci.optparse,
     rater,
     readr,
     tidyr,
@@ -25,6 +26,7 @@ Suggests:
     testtools,
 Remotes:
     IslasGECI/calling_rate_r,
+    IslasGECI/optparse,
     IslasGECI/testtools,
 Type: Package
 Version: 0.3.1
