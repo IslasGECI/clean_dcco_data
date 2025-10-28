@@ -11,6 +11,7 @@ Description: Módulo para limpiar datos de cormorant orejón
 Encoding: UTF-8
 Imports:
     dplyr,
+    rater,
     readr,
     tidyr,
 LazyData: true
@@ -21,5 +22,7 @@ Suggests:
     devtools,
     roxygen2,
     testthat
+Remotes:
+    IslasGECI/calling_rate_r
 Type: Package
 Version: 0.3.1
