@@ -62,7 +62,7 @@ describe("Summary counts by season", {
 })
 describe("Write figure metadata", {
   data_path <- "/workdir/tests/data/cormorant_all_islets_clean_data.csv"
-  figure_path <- "figures/cormorant_population_trend_alcatraz.png"
+  figure_path <- "figures/cormorant_population_trend_asuncion.png"
   output_path <- "/workdir/tests/asuncion_figure_metadata.json"
   options <- list("data-path" = data_path, "island" = "Asuncion", "figure-path" = figure_path, "output-path" = output_path)
   it("Write json", {
