@@ -15,7 +15,7 @@ describe("write_figure_metadata", {
     expected_first_season <- 2000
     expect_equal(obtained_first_season, expected_first_season)
 
-    obtained_last_season <- obtained[["first_season"]]
+    obtained_last_season <- obtained[["last_season"]]
     expected_last_season <- 2022
     expect_equal(obtained_last_season, expected_last_season)
   })
