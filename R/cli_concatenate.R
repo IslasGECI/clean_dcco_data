@@ -32,7 +32,7 @@ write_figure_metadata <- function(options) {
   clean_data <- readr::read_csv(options[["data-path"]], show_col_types = FALSE)
   figure_metadata_list <- construct_figure_metadata(clean_data, options[["island"]], options[["figure-path"]])
   readr::write_lines(
-    jsonlite::toJSON(figure_metadata_list, pretty = T),
+    jsonlite::toJSON(figure_metadata_list, pretty = TRUE, auto_unbox = TRUE),
     options[["output-path"]]
   )
 }
