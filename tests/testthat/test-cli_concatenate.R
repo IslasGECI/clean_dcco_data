@@ -64,8 +64,10 @@ describe("Write figure metadata", {
   data_path <- "/workdir/tests/data/cormorant_all_islets_clean_data.csv"
   figure_path <- "figures/cormorant_population_trend_alcatraz.png"
   output_path <- "/workdir/tests/asuncion_figure_metadata.json"
-  options <- list("data-path" = data_path, "island" = "Asuncion", "figure-path" = figure_path, "output-path")
-  testtools::if_exist_remove(output_path)
-  write_figure_metadata(options)
-  expect_true(testtools::exists_output_file(output_path))
+  options <- list("data-path" = data_path, "island" = "Asuncion", "figure-path" = figure_path, "output-path" = output_path)
+  it("Write json", {
+    testtools::if_exist_remove(output_path)
+    write_figure_metadata(options)
+    expect_true(testtools::exist_output_file(output_path))
+  })
 })
