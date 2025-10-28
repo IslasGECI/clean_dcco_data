@@ -21,8 +21,10 @@ RoxygenNote: 7.2.1
 Suggests:
     devtools,
     roxygen2,
-    testthat
+    testthat,
+    testtools,
 Remotes:
-    IslasGECI/calling_rate_r
+    IslasGECI/calling_rate_r,
+    IslasGECI/testtools,
 Type: Package
 Version: 0.3.1
