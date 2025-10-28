@@ -10,5 +10,9 @@ describe("write_figure_metadata", {
   it("Fill keys from data", {
     obtained_island <- obtained[["island"]]
     expect_equal(obtained_island, island)
+
+    obtained_first_season <- obtained[["first_season"]]
+    expected_first_season <- 2000
+    expect_equal(obtained_first_season, expected_first_season)
   })
 })
