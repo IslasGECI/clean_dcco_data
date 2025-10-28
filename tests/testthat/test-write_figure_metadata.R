@@ -1,4 +1,4 @@
-describe("write_figure_metadata", {
+describe("construct_figure_metadata", {
   clean_data_all_islets <- readr::read_csv("/workdir/tests/data/cormorant_all_islets_clean_data.csv")
   island <- "Alcatraz"
   figure_path <- "figures/cormorant_population_trend_alcatraz.png"
