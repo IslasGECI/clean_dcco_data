@@ -1,6 +1,6 @@
 construct_figure_metadata <- function(clean_data, island) {
   first_season <- clean_data |>
-    dplyr::filter(Isla == island) |>
+    rater::filter_by_island(island) |>
     dplyr::pull(Temporada) |>
     min()
 
