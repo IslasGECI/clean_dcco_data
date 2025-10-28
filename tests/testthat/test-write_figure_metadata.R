@@ -9,6 +9,6 @@ describe("write_figure_metadata", {
   })
   it("Fill keys from data", {
     obtained_island <- obtained[["island"]]
-    expected_equal(obtained_island, island)
+    expect_equal(obtained_island, island)
   })
 })
