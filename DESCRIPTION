@@ -14,6 +14,7 @@ Imports:
     geci.optparse,
     rater,
     readr,
+    testtools,
     tidyr,
 LazyData: true
 License: AGPL-3.0-or-later
@@ -23,7 +24,6 @@ Suggests:
     devtools,
     roxygen2,
     testthat,
-    testtools,
 Remotes:
     IslasGECI/calling_rate_r,
     IslasGECI/optparse,
