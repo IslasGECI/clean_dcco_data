@@ -12,9 +12,12 @@ Encoding: UTF-8
 Imports:
     dplyr,
     geci.optparse,
+    jsonlite,
     rater,
     readr,
+    testthat,
     testtools,
+    tibble,
     tidyr,
 LazyData: true
 License: AGPL-3.0-or-later
@@ -23,7 +26,6 @@ RoxygenNote: 7.2.1
 Suggests:
     devtools,
     roxygen2,
-    testthat,
 Remotes:
     IslasGECI/calling_rate_r,
     IslasGECI/optparse,
