@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.4.0] - 2025-11-05
+
+### Added
+- Function `write_figure_metadata()` that writes metadata for figures using data.
+- Function `get_domain_specific_options()` allow to use domain specific options.
+
 ## [0.3.1] - 2023-08-22
 
 ### Fixed

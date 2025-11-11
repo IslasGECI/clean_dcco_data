@@ -32,7 +32,9 @@ format:
       -e "style_dir('tests')" \
       -e "style_dir('tests/testthat')"
 
-init: setup tests
+init: init_git setup tests
+
+init_git:
 	git config --global --add safe.directory /workdir
 	git config --global user.name "Ciencia de Datos • GECI"
 	git config --global user.email "ciencia.datos@islas.org.mx"
@@ -40,10 +42,10 @@ init: setup tests
 setup: clean install
 
 install:
+	R -e "devtools::install()" && \
 	R -e "devtools::document()" && \
-    R CMD build . && \
-    R CMD check clean.dcco_0.3.1.tar.gz && \
-    R CMD INSTALL clean.dcco_0.3.1.tar.gz
+	R -e "devtools::build()" && \
+	R -e "devtools::check(error_on = 'error')"
 
 tests:
 	Rscript -e "devtools::test(stop_on_failure = TRUE)"
