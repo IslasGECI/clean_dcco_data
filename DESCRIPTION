@@ -11,7 +11,7 @@ Description: Módulo para limpiar datos de cormorant orejón
 Encoding: UTF-8
 Imports:
     dplyr,
-    geci.optparse,
+    gecioptparse,
     jsonlite,
     rater,
     readr,
