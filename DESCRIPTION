@@ -28,7 +28,7 @@ Suggests:
     roxygen2,
 Remotes:
     IslasGECI/calling_rate_r,
-    IslasGECI/optparse,
+    IslasGECI/geci_optparse,
     IslasGECI/testtools,
 Type: Package
 Version: 0.4.0
