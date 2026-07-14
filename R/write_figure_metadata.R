@@ -5,6 +5,6 @@ construct_figure_metadata <- function(clean_data, island, figure_path) {
 
 extract_season_column_by_island <- function(clean_data, island) {
   clean_data |>
-    filter_by_island(island) |>
+    gecitools::filter_by_island(island) |>
     dplyr::pull(Temporada)
 }
