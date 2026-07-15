@@ -7,7 +7,6 @@ write_concatenated_counts <- function(options) {
   clean_nests_counts_data <- nests_counts_data |> drop_unreliable_records()
   maximum_nests_counts <- compute_maximum_nests(clean_nests_counts_data)
   single_year_high_counts_data <- high_counts_data |>
-    drop_unreliable_records() |>
     clean_high_counts_data()
 
   concatenated_data <- dplyr::bind_rows(maximum_historic_counts, maximum_nests_counts, single_year_high_counts_data)
@@ -21,6 +20,7 @@ drop_unreliable_records <- function(data) {
 clean_high_counts_data <- function(high_counts_data) {
   single_year_high_counts_data <- high_counts_data |>
     select_initial_year() |>
+    drop_unreliable_records() |>
     dplyr::mutate(Temporada = as.integer(Temporada)) |>
     dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada") |>
     dplyr::filter(!is.na(Nidos_activos_por_visita))
