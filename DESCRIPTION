@@ -1,4 +1,4 @@
-Package: clean.dcco
+Package: cleandcco
 Title: clean_dcco_data
 Authors@R: c(
     person(given = "Ciencia de Datos",

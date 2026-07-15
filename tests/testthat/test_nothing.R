@@ -1,7 +1,7 @@
 describe("Get version of the module", {
   it("The version is 0.4.0", {
     expected_version <- c("0.4.0")
-    obtained_version <- packageVersion("clean.dcco")
+    obtained_version <- packageVersion("cleandcco")
     version_are_equal <- expected_version == obtained_version
     expect_true(version_are_equal)
   })

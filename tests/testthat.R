@@ -1,3 +1,3 @@
 library(testthat)
-library(clean.dcco)
-test_check("clean.dcco")
+library(cleandcco)
+test_check("cleandcco")
