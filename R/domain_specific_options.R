@@ -1,3 +1,10 @@
+#' Get domain-specific CLI options
+#'
+#' Defines and returns the command-line options for the domain-specific options.
+#'
+#' @return A named list of parsed CLI options with keys `data-path`,
+#'   `island`, `figure-path`, and `output-path`.
+#'
 #' @export
 get_domain_specific_options <- function() {
   data_path <- gecioptparse::character_option(c("-d", "--data-path"), default = "/workdir/data.csv", help = "Path from data input")
