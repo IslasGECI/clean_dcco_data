@@ -1,3 +1,4 @@
+#' @export
 write_concatenated_counts <- function(options) {
   historical_data <- readr::read_csv(options[["historic_data_path"]], show_col_types = FALSE)
   high_counts_data <- readr::read_csv(options[["high_counts_path"]], show_col_types = FALSE)
