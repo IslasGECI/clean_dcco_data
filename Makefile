@@ -41,9 +41,9 @@ init_git:
 
 setup: clean install
 
-install:
-	R -e "devtools::install()" && \
+install: clean
 	R -e "devtools::document()" && \
+	R -e "devtools::install(dependencies = TRUE)" && \
 	R -e "devtools::build()" && \
 	R -e "devtools::check(error_on = 'error')"
 
