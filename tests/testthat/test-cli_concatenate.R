@@ -14,9 +14,9 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
       output_path = "/workdir/tests/concatenated_historic_high_counts_and_counts.csv"
     )
 
-    testtools::if_exist_remove(output_path)
+    testtools::if_exist_remove(write_concatenated_counts_options$output_path)
     write_concatenated_counts(write_concatenated_counts_options)
-    expect_true(testtools::exist_output_file(output_path))
+    expect_true(testtools::exist_output_file(write_concatenated_counts_options$output_path))
   })
   it("concatenate_maximum_california_gulf", {
     cli_concatenate(options)
