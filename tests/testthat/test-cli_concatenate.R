@@ -6,6 +6,18 @@ options <- list(
 )
 
 describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo de todas las islas", {
+  it("concatenate historic, high counts and counts", {
+    write_concatenated_counts_options <- list(
+      historic_data_path = "/workdir/tests/data/historical_data.csv",
+      high_counts_path = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
+      nests_counts_path = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
+      output_path = "/workdir/tests/concatenated_historic_high_counts_and_counts.csv"
+    )
+
+    testtools::if_exist_remove(output_path)
+    write_concatenated_counts(write_concatenated_counts_options)
+    expect_true(testtools::exist_output_file(output_path))
+  })
   it("concatenate_maximum_california_gulf", {
     cli_concatenate(options)
     obtained <- readr::read_csv(concatenated_outuput_path, col_types = "cccic", show_col_types = FALSE)
