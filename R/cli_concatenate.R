@@ -4,8 +4,9 @@ write_concatenated_counts <- function(options) {
   nests_counts_data <- readr::read_csv(options[["nests_counts_path"]], show_col_types = FALSE)
 
   maximum_historic_counts <- compute_maximum_nests(historical_data)
-  clean_nests_counts_data <- nests_counts_data |> drop_unreliable_records()
-  maximum_nests_counts <- compute_maximum_nests(clean_nests_counts_data)
+  maximum_nests_counts <- nests_counts_data |>
+    drop_unreliable_records() |>
+    compute_maximum_nests()
   single_year_high_counts_data <- high_counts_data |>
     clean_high_counts_data()
 
