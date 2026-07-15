@@ -1,3 +1,17 @@
+write_concatenated_counts <- function(options) {
+  historical_data <- readr::read_csv(options[["historic_data_path"]], show_col_types = FALSE)
+  high_counts_data <- readr::read_csv(options[["high_counts_path"]], show_col_types = FALSE)
+  nests_counts_data <- readr::read_csv(options[["nests_counts_path"]], show_col_types = FALSE)
+
+  maximum_historic_counts <- compute_maximum_nests(historical_data)
+  maximum_nests_counts <- compute_maximum_nests(nests_counts_data)
+  print(maximum_historic_counts)
+  print(maximum_nests_counts)
+
+  concatenated_data <- dplyr::bind_rows(maximum_historic_counts, maximum_nests_counts)
+  readr::write_csv(concatenated_data, options[["output_path"]])
+}
+
 #' @export
 cli_concatenate <- function(options) {
   california_data <- readr::read_csv(options[["right_data"]], show_col_types = FALSE)
