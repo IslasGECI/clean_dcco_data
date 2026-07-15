@@ -8,17 +8,17 @@ options <- list(
 describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo de todas las islas", {
   it("concatenate historic, high counts and counts", {
     write_concatenated_counts_options <- list(
-      historic_data_path = "/workdir/tests/data/historical_data.csv",
-      high_counts_path = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
-      nests_counts_path = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
-      output_path = "/workdir/tests/concatenated_historic_high_counts_and_counts.csv"
+      "historical-data-path" = "/workdir/tests/data/historical_data.csv",
+      "high-counts-path" = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
+      "nests-counts-path" = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
+      "output-path" = "/workdir/tests/concatenated_historic_high_counts_and_counts.csv"
     )
 
-    testtools::if_exist_remove(write_concatenated_counts_options$output_path)
+    testtools::if_exist_remove(write_concatenated_counts_options[["output-path"]])
     write_concatenated_counts(write_concatenated_counts_options)
-    expect_true(testtools::exist_output_file(write_concatenated_counts_options$output_path))
+    expect_true(testtools::exist_output_file(write_concatenated_counts_options[["output-path"]]))
 
-    obtained <- readr::read_csv(write_concatenated_counts_options$output_path, show_col_types = FALSE)
+    obtained <- readr::read_csv(write_concatenated_counts_options[["output-path"]], show_col_types = FALSE)
     expected_nrows <- 44
     expect_equal(nrow(obtained), expected_nrows)
   })

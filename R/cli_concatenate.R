@@ -16,9 +16,9 @@
 #'
 #' @export
 write_concatenated_counts <- function(options) {
-  historical_data <- readr::read_csv(options[["historic_data_path"]], show_col_types = FALSE)
-  high_counts_data <- readr::read_csv(options[["high_counts_path"]], show_col_types = FALSE)
-  nests_counts_data <- readr::read_csv(options[["nests_counts_path"]], show_col_types = FALSE)
+  historical_data <- readr::read_csv(options[["historical-data-path"]], show_col_types = FALSE)
+  high_counts_data <- readr::read_csv(options[["high-counts-path"]], show_col_types = FALSE)
+  nests_counts_data <- readr::read_csv(options[["nests-counts-path"]], show_col_types = FALSE)
 
   maximum_historic_counts <- compute_maximum_nests(historical_data)
   maximum_nests_counts <- nests_counts_data |>
@@ -28,7 +28,7 @@ write_concatenated_counts <- function(options) {
     clean_high_counts_data()
 
   concatenated_data <- dplyr::bind_rows(maximum_historic_counts, maximum_nests_counts, single_year_high_counts_data)
-  readr::write_csv(concatenated_data, options[["output_path"]])
+  readr::write_csv(concatenated_data, options[["output-path"]])
 }
 
 drop_unreliable_records <- function(data) {
