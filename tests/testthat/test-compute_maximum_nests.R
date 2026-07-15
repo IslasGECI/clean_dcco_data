@@ -6,6 +6,9 @@ describe("Compute maximum nests from data for the same island and season", {
     expected_rows <- 31
     expect_equal(nrow(obtained), expected_rows)
     obtained_columns <- colnames(obtained)
-    expect_true("Nidos_activos_por_visita" %in% obtained_columns)
+    expected_column <- "Nidos_activos_por_visita"
+    expect_true(expected_column %in% obtained_columns)
+    obtained_patos_2018_maximum <- obtained[[obtained$Isla == "Patos" & obtained$Temporada == 2018, expected_column]]
+    expect_equal(obtained_patos_2018_maximum, 445)
   })
 })
