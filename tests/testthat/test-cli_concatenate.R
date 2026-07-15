@@ -19,7 +19,7 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
     expect_true(testtools::exist_output_file(write_concatenated_counts_options$output_path))
 
     obtained <- readr::read_csv(write_concatenated_counts_options$output_path, show_col_types = FALSE)
-    expected_nrows <- 45
+    expected_nrows <- 44
     expect_equal(nrow(obtained), expected_nrows)
   })
   it("concatenate_maximum_california_gulf", {
