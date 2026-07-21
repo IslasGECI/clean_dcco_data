@@ -27,7 +27,8 @@ write_concatenated_counts <- function(options) {
   single_year_high_counts_data <- high_counts_data |>
     clean_high_counts_data()
 
-  concatenated_data <- dplyr::bind_rows(maximum_historic_counts, maximum_nests_counts, single_year_high_counts_data) |> dplyr::arrange(Isla)
+  concatenated_data <- dplyr::bind_rows(maximum_historic_counts, maximum_nests_counts, single_year_high_counts_data) |>
+    dplyr::arrange(Isla, Temporada)
   readr::write_csv(concatenated_data, options[["output-path"]])
 }
 
