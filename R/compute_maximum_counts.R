@@ -20,7 +20,9 @@ sum_monthly_maximum_nest_counts_of_two_islands <- function(max_nests_counts, isl
   max_nests_counts |>
     dplyr::filter(Isla == island_1 | Isla == island_2) |>
     dplyr::group_by(year_month, Temporada) |>
-    dplyr::summarise(Nidos_activos_por_visita = sum(Nidos_activos_por_visita, na.rm = TRUE))
+    dplyr::summarise(Nidos_activos_por_visita = sum(Nidos_activos_por_visita, na.rm = TRUE)) |>
+    dplyr::ungroup() |>
+    dplyr::mutate(Isla = glue::glue("{island_1}_{island_2}"))
 }
 
 compute_maximum_nests_by_month_and_island <- function(nest_counts, max_nest_count) {
