@@ -16,7 +16,7 @@ describe("Compute maximum nests combining two islands as the same site", {
     "output-path" = output_path
   )
   testtools::if_exist_remove(output_path)
-  write_maximum_nest_counts_as_same_site(options)
+  write_maximum_nest_counts_as_same_site(write_maximum_nest_counts_as_same_site_options)
   expect_true(testtools::exist_output_file(output_path))
 })
 
