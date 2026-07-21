@@ -16,6 +16,12 @@ drop_unreliable_records <- function(data) {
   data |> dplyr::filter(stringr::str_detect(Notas, "No usar", negate = TRUE) | is.na(Notas))
 }
 
+sum_monthly_maximum_nest_counts_of_two_islands <- function(max_nests_counts, island_1, island_2) {
+  max_nests_counts |>
+    dplyr::group_by(year_month, Temporada) |>
+    dplyr::summarise(Nidos_activos_por_visita = sum(Nidos_activos_por_visita, na.rm = TRUE))
+}
+
 compute_maximum_nests_by_month_and_island <- function(nest_counts, max_nest_count) {
   concatenated_df <- concatenate_high_and_monthly_nest_counts(nest_counts, max_nest_count)
   concatenated_df |>
