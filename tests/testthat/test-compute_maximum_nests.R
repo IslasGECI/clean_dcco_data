@@ -13,7 +13,7 @@ describe("Sum maximum nest of two Islands", {
     expect_equal(obtained_rows, expected_rows)
   })
   it("assert sum is by given islands", {
-    obtained_sum <- obtained$Nidos_activos_por_visita[year_month == "Nov/2021"]
+    obtained_sum <- obtained$Nidos_activos_por_visita[obtained$year_month == "Nov/2021"]
     expected_sum <- 3
     expect_equal(obtained_sum, expected_sum)
   })
