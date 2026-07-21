@@ -20,5 +20,12 @@ concatenate_high_and_monthly_nest_counts <- function(nest_counts, max_nest_count
   processed_max_nest_count <- max_nest_count |>
     select_initial_year() |>
     dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada")
-  dplyr::bind_rows(processed_max_nest_count, nest_counts)
+  binded_df <- dplyr::bind_rows(processed_max_nest_count, nest_counts)
+  binded_df |>
+    dplyr::mutate(year_month = substr(Fecha, 4, 12)) |>
+    dplyr::group_by(Isla, year_month, Temporada) |>
+    dplyr::summarise(
+      Nidos_activos_por_visita = max(Nidos_activos_por_visita, na.rm = TRUE)
+    ) |>
+    dplyr::ungroup()
 }
