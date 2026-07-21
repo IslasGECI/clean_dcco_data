@@ -2,7 +2,7 @@ concatenate_maximum_california_gulf <- function(all_islets_data, california_data
   no_california_islands <- all_islets_data |>
     select_pacific_islands()
   california_single_year_season <- california_data |>
-    select_initial_year()
+    xxselect_initial_year()
   concatenate_california_and_all_islets(california_single_year_season, no_california_islands)
 }
 
