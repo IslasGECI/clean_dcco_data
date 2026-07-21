@@ -5,6 +5,21 @@ options <- list(
   output_path = concatenated_outuput_path
 )
 
+describe("Compute maximum nests combining two islands as the same site", {
+  output_path <- "/workdir/tests/bledos_patos_maximum_nests.csv"
+  write_maximum_nest_counts_as_same_site_options <- list(
+    "historical-data-path" = "/workdir/tests/data/historical_data.csv",
+    "high-counts-path" = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
+    "nests-counts-path" = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
+    "island" = "Bledos",
+    "island" = "Patos",
+    "output-path" = output_path
+  )
+  testtools::if_exist_remove(output_path)
+  write_maximum_nest_counts_as_same_site(options)
+  expect_true(testtools::exist_output_file(output_path))
+})
+
 describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo de todas las islas", {
   it("concatenate historic, high counts and counts", {
     write_concatenated_counts_options <- list(
