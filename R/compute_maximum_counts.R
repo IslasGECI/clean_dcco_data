@@ -18,6 +18,7 @@ drop_unreliable_records <- function(data) {
 
 sum_monthly_maximum_nest_counts_of_two_islands <- function(max_nests_counts, island_1, island_2) {
   max_nests_counts |>
+    dplyr::filter(Isla == island_1 | Isla == island_2) |>
     dplyr::group_by(year_month, Temporada) |>
     dplyr::summarise(Nidos_activos_por_visita = sum(Nidos_activos_por_visita, na.rm = TRUE))
 }
