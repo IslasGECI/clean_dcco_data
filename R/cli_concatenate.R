@@ -31,18 +31,6 @@ write_concatenated_counts <- function(options) {
   readr::write_csv(concatenated_data, options[["output-path"]])
 }
 
-drop_unreliable_records <- function(data) {
-  data |> dplyr::filter(stringr::str_detect(Notas, "No usar", negate = TRUE) | is.na(Notas))
-}
-
-clean_high_counts_data <- function(high_counts_data) {
-  single_year_high_counts_data <- high_counts_data |>
-    select_initial_year() |>
-    drop_unreliable_records() |>
-    dplyr::mutate(Temporada = as.integer(Temporada)) |>
-    dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada") |>
-    dplyr::filter(!is.na(Nidos_activos_por_visita))
-}
 #' Concatenate California and all-islets maximum counts
 #'
 #' Reads all-islets data and California-only data from CSV files,
