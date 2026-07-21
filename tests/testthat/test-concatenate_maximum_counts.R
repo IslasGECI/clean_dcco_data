@@ -40,7 +40,7 @@ describe("Eliminar registros de islas del pacífico", {
 })
 describe("Agregar registros altos", {
   it("Seleccionar nombre temporada", {
-    obtained <- xxselect_initial_year(california_data)
+    obtained <- select_initial_year(california_data)
     expected <- c(2018)
     expect_equal(obtained$Temporada[1], expected)
     expect_equal(obtained$Temporada[2], 2019)

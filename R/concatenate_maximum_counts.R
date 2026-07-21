@@ -2,7 +2,7 @@ concatenate_maximum_california_gulf <- function(all_islets_data, california_data
   no_california_islands <- all_islets_data |>
     select_pacific_islands()
   california_single_year_season <- california_data |>
-    xxselect_initial_year()
+    select_initial_year()
   concatenate_california_and_all_islets(california_single_year_season, no_california_islands)
 }
 
@@ -35,9 +35,6 @@ select_islands <- function(data, california_islands) {
 }
 
 select_initial_year <- function(california_data) {
-  california_data |> tidyr::separate(Temporada, c("Temporada", NA), "/")
-}
-xxselect_initial_year <- function(california_data) {
   california_data |>
     tidyr::separate(Temporada, c("Temporada", NA), "/") |>
     dplyr::mutate(Temporada = as.integer(Temporada))
