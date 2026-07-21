@@ -1,15 +1,21 @@
 describe("Sum maximum nest of two Islands", {
   maximum_nest_counts_by_month <- tibble::tibble(
-    year_month = c("Nov/2021", "Nov/2021", "Dic/2021", "Dic/2021", "Dic/2022"),
-    Isla = c("Bledos", "Patos", "Bledos", "Patos", "Patos"),
-    Temporada = c(2021, 2021, 2021, 2021, 2022),
-    Nidos_activos_por_visita = c(1, 2, 100, 200, 300)
+    year_month = c("Nov/2021", "Nov/2021", "Nov/2021", "Dic/2021", "Dic/2021", "Dic/2022"),
+    Isla = c("Bledos", "Patos", "Alcatraz", "Bledos", "Patos", "Patos"),
+    Temporada = c(2021, 2021, 2021, 2021, 2021, 2022),
+    Nidos_activos_por_visita = c(1, 2, 999, 100, 200, 300)
   )
   obtained <- sum_monthly_maximum_nest_counts_of_two_islands(maximum_nest_counts_by_month, "Bledos", "Patos")
+  print(obtained)
   it("assert shape", {
     expected_rows <- 3
     obtained_rows <- nrow(obtained)
     expect_equal(obtained_rows, expected_rows)
+  })
+  it("assert sum is by given islands", {
+    obtained_sum <- obtained$Nidos_activos_por_visita[year_month == "Nov/2021"]
+    expected_sum <- 3
+    expect_equal(obtained_sum, expected_sum)
   })
 })
 describe("Compute maximum nests of two Islands", {
