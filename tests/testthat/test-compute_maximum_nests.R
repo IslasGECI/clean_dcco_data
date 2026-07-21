@@ -14,8 +14,12 @@ describe("Compute maximum nests of two Islands", {
   obtained <- concatenate_high_and_monthly_nest_counts(nest_counts, max_nest_count)
   it("Assert shape", {
     obtained_rows <- nrow(obtained)
-    expected_rows <- 6
+    expected_rows <- 5
     expect_equal(obtained_rows, expected_rows)
+  })
+  it("Assert maximum per month", {
+    obtained_maximum_patos_2021 <- obtained$Nidos_activos_por_visita[obtained$Isla == "Patos" & obtained$Temporada == 2021]
+    expect_equal(obtained_maximum_patos_2021, 300)
   })
 })
 describe("Compute maximum nests from data for the same island and season", {
