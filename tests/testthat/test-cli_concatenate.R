@@ -21,6 +21,9 @@ describe("🪙 Concatenate conteo máximo de nidos por temporada con el conteo d
     obtained <- readr::read_csv(write_concatenated_counts_options[["output-path"]], show_col_types = FALSE)
     expected_nrows <- 44
     expect_equal(nrow(obtained), expected_nrows)
+    obtained_first_island <- obtained[[1, 1]]
+    expected_first_island <- "Alcatraz"
+    expect_equal(obtained_first_island, expected_first_island)
   })
   it("concatenate_maximum_california_gulf", {
     testtools::if_exist_remove(concatenated_outuput_path)
