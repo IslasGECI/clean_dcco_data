@@ -19,8 +19,7 @@ drop_unreliable_records <- function(data) {
 
 concatenate_high_and_monthly_nest_counts <- function(nest_counts, max_nest_count) {
   processed_max_nest_count <- max_nest_count |>
-    select_initial_year() |>
-    dplyr::mutate(Temporada = as.integer(Temporada)) |>
+    xxselect_initial_year() |>
     dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada")
   dplyr::bind_rows(processed_max_nest_count, nest_counts)
 }
