@@ -1,3 +1,23 @@
+#' Write maximum nest counts treating two islands as the same site
+#'
+#' Reads high-counts and nests-counts data from CSV files, cleans both
+#' datasets by removing unreliable records, computes the monthly maximum
+#' nest counts per island, sums the maximums for the specified pair of
+#' islands (treating them as a single site), aggregates by season, and
+#' writes the result to a CSV file.
+#'
+#' @param options A named list with the following keys:
+#'   \describe{
+#'     \item{high-counts-path}{Path to the high counts CSV.}
+#'     \item{nests-counts-path}{Path to the nests counts CSV.}
+#'     \item{island}{Character vector of length 2 with the names of the
+#'       two islands to combine as a single site.}
+#'     \item{output-path}{Path where the resulting CSV will be written.}
+#'   }
+#'
+#' @return Invisible `NULL`. Called for its side effect of writing a CSV file.
+#'
+#' @export
 write_maximum_nest_counts_as_same_site <- function(options) {
   high_counts_data <- readr::read_csv(options[["high-counts-path"]], show_col_types = FALSE)
   nests_counts_data <- readr::read_csv(options[["nests-counts-path"]], show_col_types = FALSE)
