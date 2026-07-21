@@ -17,6 +17,10 @@ describe("Sum maximum nest of two Islands", {
     expected_sum <- 3
     expect_equal(obtained_sum, expected_sum)
   })
+  it("rename islands", {
+    expeted_island_name <- "Bledos_Patos"
+    expect_equal(otained$Isla[[1]], expeted_island_name)
+  })
 })
 describe("Compute maximum nests of two Islands", {
   max_nest_count <- tibble::tibble(
