@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-07-21
+
+### Added
+- Function `write_maximum_nest_counts_as_same_site()` that computes maximum nest counts treating two islands as a single site.
+
+### Changed
+- `write_concatenated_counts()` now sorts output by island and season.
+
 ## [0.5.0] - 2026-07-15
 
 ### Added
@@ -42,7 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023-06-06
 
 
-[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.5.0...HEAD
+[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.3.0...v0.3.1
