@@ -7,9 +7,8 @@ compute_maximum_nests <- function(nest_counts_df) {
 
 clean_high_counts_data <- function(high_counts_data) {
   single_year_high_counts_data <- high_counts_data |>
-    select_initial_year() |>
+    xxselect_initial_year() |>
     drop_unreliable_records() |>
-    dplyr::mutate(Temporada = as.integer(Temporada)) |>
     dplyr::rename(Nidos_activos_por_visita = "Nidos_altos_por_temporada") |>
     dplyr::filter(!is.na(Nidos_activos_por_visita))
 }
