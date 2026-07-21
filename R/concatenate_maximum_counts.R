@@ -37,6 +37,11 @@ select_islands <- function(data, california_islands) {
 select_initial_year <- function(california_data) {
   california_data |> tidyr::separate(Temporada, c("Temporada", NA), "/")
 }
+xxselect_initial_year <- function(california_data) {
+  california_data |>
+    tidyr::separate(Temporada, c("Temporada", NA), "/") |>
+    dplyr::mutate(Temporada = as.integer(Temporada))
+}
 
 concatenate_california_and_all_islets <- function(california_data, all_islets_data) {
   california_data |>
