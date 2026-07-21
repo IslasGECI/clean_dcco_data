@@ -1,3 +1,15 @@
+write_maximum_nest_counts_as_same_site <- function(options) {
+  high_counts_data <- readr::read_csv(options[["high-counts-path"]], show_col_types = FALSE)
+  nests_counts_data <- readr::read_csv(options[["nests-counts-path"]], show_col_types = FALSE)
+  clean_nest_counts <- nests_counts_data |> drop_unreliable_records()
+  clean_high_counts <- high_counts_data |> drop_unreliable_records()
+  maximum_counts_by_month <- compute_maximum_nests_by_month_and_island(clean_nest_counts, clean_high_counts)
+
+  idx <- which(names(options) == "island")
+  islands <- options[idx]
+  maximun_nest_counts <- sum_monthly_maximum_nest_counts_of_two_islands(maximum_counts_by_month, islands[1], islands[2]) |> compute_maximum_nests_by_season()
+  readr::write_csv(maximun_nest_counts, options[["output-path"]])
+}
 #' Write concatenated maximum counts
 #'
 #' Reads historical, high-counts, and nests-counts data from CSV files,
