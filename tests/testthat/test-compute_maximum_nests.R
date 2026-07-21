@@ -25,7 +25,7 @@ describe("Compute maximum nests of two Islands", {
     Temporada = c(2019, 2021, 2021),
     Nidos_activos_por_visita = c(100, 200, 300)
   )
-  obtained <- concatenate_high_and_monthly_nest_counts(nest_counts, max_nest_count)
+  obtained <- compute_maximum_nests_by_month_and_island(nest_counts, max_nest_count)
   it("Assert shape", {
     obtained_rows <- nrow(obtained)
     expected_rows <- 5
