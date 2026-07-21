@@ -8,7 +8,6 @@ options <- list(
 describe("Compute maximum nests combining two islands as the same site", {
   output_path <- "/workdir/tests/bledos_patos_maximum_nests.csv"
   write_maximum_nest_counts_as_same_site_options <- list(
-    "historical-data-path" = "/workdir/tests/data/historical_data.csv",
     "high-counts-path" = "/workdir/tests/data/conteo_alto_nidos_cormoran_golfo_california.csv",
     "nests-counts-path" = "/workdir/tests/data/conteo_nidos_cormoran_todas_islas.csv",
     "island" = "Bledos",

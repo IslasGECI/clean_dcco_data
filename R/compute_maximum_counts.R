@@ -28,6 +28,7 @@ sum_monthly_maximum_nest_counts_of_two_islands <- function(max_nests_counts, isl
 compute_maximum_nests_by_month_and_island <- function(nest_counts, max_nest_count) {
   concatenated_df <- concatenate_high_and_monthly_nest_counts(nest_counts, max_nest_count)
   concatenated_df |>
+    dplyr::filter(!is.na(Fecha)) |>
     dplyr::mutate(year_month = substr(Fecha, 4, 12)) |>
     dplyr::group_by(Isla, year_month, Temporada) |>
     dplyr::summarise(
