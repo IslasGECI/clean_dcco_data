@@ -10,8 +10,9 @@
 #'   \describe{
 #'     \item{high-counts-path}{Path to the high counts CSV.}
 #'     \item{nests-counts-path}{Path to the nests counts CSV.}
-#'     \item{island}{Character vector of length 2 with the names of the
-#'       two islands to combine as a single site.}
+#'     \item{island}{A single character string with the names of the two
+#'       islands to combine as a single site, separated by a comma
+#'       (e.g., \code{"Bledos,Patos"}).}
 #'     \item{output-path}{Path where the resulting CSV will be written.}
 #'   }
 #'
