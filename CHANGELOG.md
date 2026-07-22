@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-07-22
+
+### Changed
+- `construct_figure_metadata()` now replaces underscores with hyphens in island names for the JSON metadata output (e.g., `"Bledos_Patos"` → `"Bledos-Patos"`).
+
 ## [0.7.0] - 2026-07-22
 
 ### Changed
@@ -55,7 +60,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023-06-06
 
 
-[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.7.0...HEAD
+[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.4.0...v0.5.0
