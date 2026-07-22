@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-07-22
+
+### Changed
+- `write_maximum_nest_counts_as_same_site()` now accepts `island` as a single comma-separated string (e.g., `"Bledos,Patos"`) instead of multiple `island` list entries. This is a breaking change to the function's API. This is the standard workaround and what most `optparse` CLIs do.
+
 ## [0.6.0] - 2026-07-21
 
 ### Added
@@ -50,7 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023-06-06
 
 
-[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.6.0...HEAD
+[unreleased]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/IslasGECI/clean_dcco_data/compare/v0.3.1...v0.4.0
