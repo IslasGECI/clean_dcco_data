@@ -7,6 +7,7 @@ all: check coverage
     format \
     init \
     install \
+    mutants \
     setup \
     tests
 
@@ -48,6 +49,9 @@ install: clean
 
 tests:
 	Rscript -e "devtools::test(stop_on_failure = TRUE)"
+
+mutants:
+	echo "👾😢 No mutation testing in R package"
 
 red: format
 	Rscript -e "devtools::test(stop_on_failure = TRUE)" \
