@@ -23,4 +23,11 @@ describe("construct_figure_metadata", {
     obtained_figure_path <- obtained[["figure_path"]]
     expect_equal(obtained_figure_path, figure_path)
   })
+  it("Fill island key when there is two islands", {
+    islands <- "Bledos_Patos"
+    obtained <- construct_figure_metadata(clean_data_all_islets, islands, figure_path)
+    obtained_island <- obtained[["island"]]
+    expected_island_key <- "Bledos y Patos"
+    expect_equal(obtained_island, expected_island_key)
+  })
 })
