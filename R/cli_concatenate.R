@@ -25,8 +25,7 @@ write_maximum_nest_counts_as_same_site <- function(options) {
   clean_high_counts <- high_counts_data |> drop_unreliable_records()
   maximum_counts_by_month <- compute_maximum_nests_by_month_and_island(clean_nest_counts, clean_high_counts)
 
-  idx <- which(names(options) == "island")
-  islands <- options[idx]
+  islands <- stringr::str_split(options[["island"]], ",")[[1]]
   maximun_nest_counts <- sum_monthly_maximum_nest_counts_of_two_islands(maximum_counts_by_month, islands[1], islands[2])
   maximun_nest_counts |>
     compute_maximum_nests_by_season() |>
