@@ -27,7 +27,7 @@ describe("construct_figure_metadata", {
     islands <- "Bledos_Patos"
     obtained <- construct_figure_metadata(clean_data_all_islets, islands, figure_path)
     obtained_island <- obtained[["island"]]
-    expected_island_key <- "Bledos y Patos"
+    expected_island_key <- "Bledos-Patos"
     expect_equal(obtained_island, expected_island_key)
   })
 })
